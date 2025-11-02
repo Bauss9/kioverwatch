@@ -1,0 +1,51 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 30px 40px;
+  overflow-y: auto;
+}
+
+.placeholder-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  font-size: 24px;
+  color: #666;
+}
+
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+}
+
+.spinner-large {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(139, 92, 246, 0.2);
+  border-top-color: #8b5cf6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 80px;
+    padding: 20px;
+  }
+}
