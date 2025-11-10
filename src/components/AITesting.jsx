@@ -156,7 +156,9 @@ const AITesting = () => {
   }
 
   const connectWebSocket = (filename) => {
-    const websocket = new WebSocket(`ws://localhost:8000/ws/process/${filename}`)
+  const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
+  const wsHost = 'python.ghiblification.ai' // Match your API domain
+  const websocket = new WebSocket(`${wsProtocol}//${wsHost}/ws/process/${filename}`)
 
     websocket.onopen = () => {
       console.log('WebSocket connected')
