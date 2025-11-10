@@ -1,25 +1,38 @@
-import { Eye, Camera, BarChart3, Settings, Activity, Brain, LogOut } from 'lucide-react'
+import { 
+  LayoutDashboard, 
+  Camera, 
+  Brain, 
+  Settings, 
+  LogOut,
+  Eye,
+  Zap,
+  TestTube
+} from 'lucide-react'
 import './Sidebar.css'
 
 const Sidebar = ({ activeView, setActiveView }) => {
+  const menuItems = [
+    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'cameras', label: 'Kameras', icon: Camera },
+    { id: 'ai-management', label: 'KI-Verwaltung', icon: Brain },
+    { id: 'ai-testing', label: 'KI-Tests', icon: TestTube },
+    { id: 'settings', label: 'Einstellungen', icon: Settings },
+  ]
+
   const handleLogout = () => {
     localStorage.removeItem('authToken')
     localStorage.removeItem('tokenExpiry')
     window.location.reload()
   }
-  const menuItems = [
-    { id: 'dashboard', icon: Activity, label: 'Dashboard' },
-    { id: 'cameras', icon: Camera, label: 'Kameras' },
-    { id: 'ai-management', icon: Brain, label: 'KI-Verwaltung' },
-    { id: 'settings', icon: Settings, label: 'Einstellungen' },
-  ]
 
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <div className="logo">
-          <Eye className="logo-icon" size={32} />
-          <span className="logo-text">Overwatch</span>
+        <div className="logo-container">
+          <div className="logo-icon">
+            <Eye size={28} />
+          </div>
+          <h1 className="logo-text">Overwatch</h1>
         </div>
       </div>
 
@@ -40,15 +53,9 @@ const Sidebar = ({ activeView, setActiveView }) => {
       </nav>
 
       <div className="sidebar-footer">
-        <div className="user-info">
-          <div className="user-avatar">AI</div>
-          <div className="user-details">
-            <div className="user-name">Administrator</div>
-            <div className="user-status">Online</div>
-          </div>
-        </div>
-        <button className="logout-btn" onClick={handleLogout} title="Abmelden">
+        <button className="logout-btn" onClick={handleLogout}>
           <LogOut size={18} />
+          <span>Abmelden</span>
         </button>
       </div>
     </aside>

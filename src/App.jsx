@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar'
 import Dashboard from './components/Dashboard'
 import Cameras from './components/Cameras'
 import AIManagement from './components/AIManagement'
+import AITesting from './components/AITesting'
 import Settings from './components/Settings'
 import Login from './components/Login'
 import SetupWizard from './components/SetupWizard'
@@ -80,6 +81,7 @@ function App() {
         {activeView === 'dashboard' && <Dashboard />}
         {activeView === 'cameras' && <Cameras />}
         {activeView === 'ai-management' && <AIManagement />}
+        {activeView === 'ai-testing' && <AITesting />}
         {activeView === 'settings' && <Settings />}
       </main>
     </div>
