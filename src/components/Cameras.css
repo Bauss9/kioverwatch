@@ -389,6 +389,25 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .page-title {
+    font-size: 28px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
   .cameras-controls {
     flex-direction: column;
   }
@@ -397,12 +416,52 @@
     min-width: 100%;
   }
 
+  .filter-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    flex: 1;
+    min-width: calc(50% - 4px);
+  }
+
   .cameras-grid-large {
     grid-template-columns: 1fr;
   }
 
   .cameras-stats-bar {
     flex-wrap: wrap;
+  }
+
+  .stat-chip {
+    flex: 1;
+    min-width: calc(50% - 8px);
+    justify-content: center;
+  }
+
+  .camera-card-large {
+    max-width: 100%;
+  }
+
+  .camera-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .fullscreen-controls {
+    flex-direction: column;
+  }
+
+  .control-group {
+    width: 100%;
+  }
+
+  .control-btn.minimize {
+    min-width: 100%;
+  }
+
+  .fullscreen-info-panel {
+    grid-template-columns: 1fr;
   }
 }
 

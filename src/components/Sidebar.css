@@ -268,7 +268,7 @@
   }
 
   /* Show mobile overlay when menu is open */
-  .mobile-overlay {
+  .mobile-overlay.active {
     display: block;
   }
 

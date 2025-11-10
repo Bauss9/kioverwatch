@@ -298,8 +298,24 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .page-title {
+    font-size: 28px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .page-header {
+    margin-bottom: 20px;
+  }
+
   .settings-grid {
     grid-template-columns: 1fr;
+  }
+
+  .settings-section {
+    padding: 20px;
   }
 
   .danger-item {

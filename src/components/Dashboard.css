@@ -659,6 +659,26 @@
     gap: 20px;
   }
 
+  .dashboard-title {
+    font-size: 28px;
+  }
+
+  .dashboard-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-section {
+    padding: 24px 20px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -669,5 +689,14 @@
 
   .hero-status-cards {
     grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .camera-card {
+    max-width: 100%;
   }
 }

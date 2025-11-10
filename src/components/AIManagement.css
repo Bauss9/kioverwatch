@@ -431,6 +431,20 @@
 }
 
 @media (max-width: 768px) {
+  .page-title {
+    font-size: 28px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
   .ai-stats-grid {
     grid-template-columns: 1fr;
   }
@@ -444,5 +458,13 @@
   .btn-primary {
     width: 100%;
     justify-content: center;
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .model-card {
+    max-width: 100%;
   }
 }

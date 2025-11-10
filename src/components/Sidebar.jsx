@@ -1,16 +1,21 @@
-import { 
-  LayoutDashboard, 
-  Camera, 
-  Brain, 
-  Settings, 
+import {
+  LayoutDashboard,
+  Camera,
+  Brain,
+  Settings,
   LogOut,
   Eye,
   Zap,
-  TestTube
+  TestTube,
+  Menu,
+  X
 } from 'lucide-react'
+import { useState } from 'react'
 import './Sidebar.css'
 
 const Sidebar = ({ activeView, setActiveView }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'cameras', label: 'Kameras', icon: Camera },
@@ -25,8 +30,31 @@ const Sidebar = ({ activeView, setActiveView }) => {
     window.location.reload()
   }
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const handleNavClick = (viewId) => {
+    setActiveView(viewId)
+    setIsMobileMenuOpen(false)
+  }
+
   return (
-    <aside className="sidebar">
+    <>
+      <button
+        className="mobile-menu-toggle"
+        onClick={toggleMobileMenu}
+        aria-label="Toggle menu"
+      >
+        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <div
+        className={`mobile-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+        onClick={toggleMobileMenu}
+      />
+
+      <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
       <div className="sidebar-header">
         <div className="logo-container">
           <div className="logo-icon">
@@ -43,7 +71,7 @@ const Sidebar = ({ activeView, setActiveView }) => {
             <button
               key={item.id}
               className={`nav-item ${activeView === item.id ? 'active' : ''}`}
-              onClick={() => setActiveView(item.id)}
+              onClick={() => handleNavClick(item.id)}
             >
               <Icon size={20} />
               <span>{item.label}</span>
@@ -59,6 +87,7 @@ const Sidebar = ({ activeView, setActiveView }) => {
         </button>
       </div>
     </aside>
+    </>
   )
 }
 
